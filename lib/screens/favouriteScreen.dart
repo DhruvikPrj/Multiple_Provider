@@ -31,7 +31,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
           itemBuilder: (context, index) => ListTile(
             onTap: () {
               value.addItem(index);
-              setState(() {});
+              // setState(() {});
             },
             leading: Text(
               "Item No $index",
