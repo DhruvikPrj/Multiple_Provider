@@ -104,22 +104,25 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                   )),
-            )
+            ),
+            const SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
     );
   }
 
-  alertDialogueBox() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const AlertDialog(
-          title: Text('Login Failed'),
-          content: Text('Please enter valid credentials...'),
-        );
-      },
-    );
-  }
+  // alertDialogueBox() {
+  //   showDialog(
+  //     context: context,
+  //     builder: (context) {
+  //       return const AlertDialog(
+  //         title: Text('Login Failed'),
+  //         content: Text('Please enter valid credentials...'),
+  //       );
+  //     },
+  //   );
+  // }
 }
