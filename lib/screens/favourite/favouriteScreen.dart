@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multiple_provider/provider/favourite_provider.dart';
+import 'package:multiple_provider/screens/favourite/myFavourite.dart';
 import 'package:provider/provider.dart';
 
 class FavouriteScreen extends StatefulWidget {
@@ -18,11 +19,31 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text(
-          "Favourite App",
-          style: TextStyle(
-              color: Colors.deepPurpleAccent, fontWeight: FontWeight.w700),
+        title: const Center(
+          child: Text(
+            "Favourite App",
+            style: TextStyle(
+                color: Colors.deepPurpleAccent, fontWeight: FontWeight.w700),
+          ),
         ),
+        actions: [
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyFavourite(),
+                  ));
+            },
+            child: Icon(
+              Icons.favorite,
+              color: Colors.red[900],
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          )
+        ],
       ),
       body: Consumer<FavouriteProvider>(builder: (context, value, child) {
         print("only this Widget");
@@ -30,7 +51,12 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
           itemCount: 50,
           itemBuilder: (context, index) => ListTile(
             onTap: () {
-              value.addItem(index);
+              if (value.selectedItems.contains(index)) {
+                value.removeItem(index);
+              } else {
+                value.addItem(index);
+              }
+
               // setState(() {});
             },
             leading: Text(
@@ -40,7 +66,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
               value.selectedItems.contains(index)
                   ? Icons.favorite
                   : Icons.favorite_outline_rounded,
-              color: Colors.blueGrey,
+              color: Colors.red[900],
               size: 25,
             ),
           ),

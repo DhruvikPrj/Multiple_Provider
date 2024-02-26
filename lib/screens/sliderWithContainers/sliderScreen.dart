@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:multiple_provider/provider/slidervalprovider.dart';
 import 'package:provider/provider.dart';
 
-class NewScreen extends StatefulWidget {
-  NewScreen({super.key});
+class SliderScreen extends StatefulWidget {
+  SliderScreen({super.key});
 
   @override
-  State<NewScreen> createState() => _NewScreenState();
+  State<SliderScreen> createState() => _SliderScreenState();
 }
 
-class _NewScreenState extends State<NewScreen> {
+class _SliderScreenState extends State<SliderScreen> {
   @override
   Widget build(BuildContext context) {
     // final countProvider =
