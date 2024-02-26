@@ -85,16 +85,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: Center(
                     child: authProvider.loading
-                        ? LoadingAnimationWidget.twistingDots(
-                            leftDotColor: const Color(0xFF1A1A3F),
-                            rightDotColor: Colors.white,
-                            size: 50,
+                        ? Container(
+                            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                            height: 200,
+                            child: LoadingAnimationWidget.twistingDots(
+                              leftDotColor: const Color(0xFF1A1A3F),
+                              rightDotColor: Colors.white,
+                              size: 50,
+                            ),
                           )
+                        :
                         // const AlertDialog(
                         //     title: Text('Login Failed'),
                         //     content: Text('Please enter valid credentials...'),
                         //   )
-                        : const Text(
+                        const Text(
                             "Login",
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
@@ -103,6 +108,18 @@ class _LoginScreenState extends State<LoginScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  alertDialogueBox() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text('Login Failed'),
+          content: Text('Please enter valid credentials...'),
+        );
+      },
     );
   }
 }

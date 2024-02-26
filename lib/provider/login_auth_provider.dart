@@ -28,16 +28,7 @@ class AuthProvider with ChangeNotifier {
         setLoading(false);
         return;
       } else {
-        // showDialog(
-        //                   context: context,
-        //                   builder: (context) {
-        //                     return const AlertDialog(
-        //                       title: Text('Login Failed'),
-        //                       content:
-        //                           Text('Please enter valid credentials...'),
-        //                     );
-        //                   },
-        //                 );
+        
         print("failed");
       }
     } catch (e) {
