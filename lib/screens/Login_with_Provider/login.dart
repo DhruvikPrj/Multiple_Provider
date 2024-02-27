@@ -48,6 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextFormField(
+                    maxLength: 100,
                     controller: emailController,
                     decoration: const InputDecoration(
                       label: Text("Enter Email"),
@@ -68,9 +69,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 onTap: () {
                                   toggle.value = !toggle.value;
                                 },
-                                child: Icon(toggle.value
-                                    ? Icons.visibility_off_rounded
-                                    : Icons.visibility))),
+                                child: Icon(
+                                    toggle.value
+                                        ? Icons.visibility_off_rounded
+                                        : Icons.visibility,
+                                    color: const Color.fromARGB(
+                                        249, 67, 11, 157)))),
                       );
                     },
                   ),
@@ -96,7 +100,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Center(
                           child: authProvider.loading
                               ? Container(
-                                  padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 20, 0, 0),
                                   height: 200,
                                   child: LoadingAnimationWidget.twistingDots(
                                     leftDotColor: const Color(0xFF1A1A3F),
