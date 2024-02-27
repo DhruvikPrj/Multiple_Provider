@@ -27,19 +27,23 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Login Page",
-          style: TextStyle(color: Colors.white, fontSize: 20),
+        title: const Center(
+          child: Text(
+            "Login Page",
+            style: TextStyle(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w800),
+          ),
         ),
         backgroundColor: Theme.of(context).primaryColorDark,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
-          child: Builder(builder: (context) {
-            return SizedBox(
-              height: 800,
-              child: Column(
+        child: Container(
+          alignment: Alignment.center,
+          height: MediaQuery.of(context).size.height * .50,
+          child: SingleChildScrollView(
+            child: Builder(builder: (context) {
+              return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -116,9 +120,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 10,
                   ),
                 ],
-              ),
-            );
-          }),
+              );
+            }),
+          ),
         ),
       ),
     );
