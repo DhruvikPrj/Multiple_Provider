@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
         padding: const EdgeInsets.all(20.0),
         child: Container(
           alignment: Alignment.center,
-          height: MediaQuery.of(context).size.height * .50,
+          height: MediaQuery.of(context).size.height,
           child: SingleChildScrollView(
             child: Builder(builder: (context) {
               return Column(
